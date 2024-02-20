@@ -1,13 +1,9 @@
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
+const WIDTH = 800;
+const HEIGHT = 600;
 
-#define WIDTH 800
-#define HEIGHT 600
+let ctx;
 
-var ctx;
-
-var ball = {
+let ball = {
     x: WIDTH / 2,
     y: HEIGHT / 2,
     radius: 10,
@@ -15,7 +11,7 @@ var ball = {
     speedY: 3
 };
 
-var paddle = {
+let paddle = {
     x: (WIDTH - 100) / 2,
     y: HEIGHT - 20 - 10,
     width: 100,
@@ -25,11 +21,11 @@ var paddle = {
 
 const brickRows = 5;
 const brickCols = 10;
-var bricks = [];
-var bricksLeft = brickRows * brickCols;
-var lives = 3;
+let bricks = [];
+let bricksLeft = brickRows * brickCols;
+let lives = 3;
 
-void initializeGame() {
+function initializeGame() {
     for (let i = 0; i < brickCols; i++) {
         for (let j = 0; j < brickRows; j++) {
             bricks.push({
@@ -42,7 +38,7 @@ void initializeGame() {
         }
     }
 
-    var canvas = document.getElementById('gameCanvas');
+    let canvas = document.getElementById('gameCanvas');
     ctx = canvas.getContext('2d');
 
     document.addEventListener('keydown', function(event) {
@@ -50,7 +46,7 @@ void initializeGame() {
     });
 }
 
-void drawGame() {
+function drawGame() {
     ctx.clearRect(0, 0, WIDTH, HEIGHT);
 
     ctx.beginPath();
@@ -81,7 +77,7 @@ void drawGame() {
     ctx.fillText('Lives Left: ' + lives, 10, HEIGHT - 40);
 }
 
-void updateGame() {
+function updateGame() {
     ball.x += ball.speedX;
     ball.y += ball.speedY;
 
@@ -133,7 +129,7 @@ void updateGame() {
     }
 }
 
-void handleKeyPress(int keyCode) {
+function handleKeyPress(keyCode) {
     if (keyCode === 37) {
         paddle.speed = -5;
     } else if (keyCode === 39) {
@@ -141,11 +137,9 @@ void handleKeyPress(int keyCode) {
     }
 }
 
-void main() {
-    initializeGame();
-    setInterval(function() {
-        drawGame();
-        updateGame();
-    }, 30);
-}
+initializeGame();
+setInterval(function() {
+    drawGame();
+    updateGame();
+}, 30);
 
