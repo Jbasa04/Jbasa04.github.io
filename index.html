@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Name - Resume</title>
+  <style>
+    /* Basic styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+    h1, h2 {
+      margin-top: 40px;
+    }
+    h2 {
+      color: #333;
+    }
+    p {
+      line-height: 1.6;
+    }
+    /* Styling for resume section */
+    .resume-section {
+      margin-top: 40px;
+    }
+    .resume-section h3 {
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Your Name</h1>
+  <p>Web Developer</p>
+</header>
+
+<div class="container">
+
+  <section class="resume-section">
+    <h2>Resume</h2>
+    <input type="file" id="resume-input" accept=".txt,.pdf,.doc,.docx">
+    <button onclick="loadResume()">Upload Resume</button>
+    <div id="resume-content">
+      <!-- Resume content will be dynamically loaded here -->
+    </div>
+  </section>
+
+</div>
+
+<script>
+  // Function to load resume content from a file
+  function loadResume() {
+    const fileInput = document.getElementById('resume-input');
+    const file = fileInput.files[0];
+    if (!file) {
+      alert('Please select a file.');
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = function(event) {
+      const resumeContent = event.target.result;
+      document.getElementById('resume-content').innerHTML = resumeContent;
+    };
+    reader.readAsText(file);
+  }
+</script>
+
+</body>
+</html>
+
