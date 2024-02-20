@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Name - Resume</title>
+  <title>Jordan Basabanda - Resume</title>
   <style>
     /* Basic styling */
     body {
@@ -51,8 +51,6 @@
 
   <section class="resume-section">
     <h2>Resume</h2>
-    <input type="file" id="resume-input" accept=".txt,.pdf,.doc,.docx" style="display: none;">
-    <button onclick="document.getElementById('resume-input').click()">Choose Another Resume</button>
     <div id="resume-content">
       <!-- Resume content will be dynamically loaded here -->
     </div>
@@ -63,31 +61,13 @@
 <script>
   // Function to load the default resume
   function loadDefaultResume() {
-    // Here, you can define the default resume content
-    const defaultResumeContent = "Your default resume content goes here.";
-    document.getElementById('resume-content').innerText = defaultResumeContent;
+    // Update the URL with the embeddable URL of your resume hosted on Google Drive
+    const resumeURL = 'https://drive.google.com/file/d/13ODL2KiF7rsopj6YnUF7BaP4AFeXtl-t/preview'; // Replace with your actual Google Drive PDF URL
+    document.getElementById('resume-content').innerHTML = `<embed src="${resumeURL}" type="application/pdf" width="100%" height="600px" />`;
   }
 
   // Call the function to load the default resume when the page loads
   window.addEventListener('DOMContentLoaded', loadDefaultResume);
-
-  // Function to handle file upload
-  function handleFileUpload(event) {
-    const file = event.target.files[0];
-    if (!file) {
-      return;
-    }
-
-    const reader = new FileReader();
-    reader.onload = function(event) {
-      const resumeContent = event.target.result;
-      document.getElementById('resume-content').innerText = resumeContent;
-    };
-    reader.readAsText(file);
-  }
-
-  // Add event listener to the file input
-  document.getElementById('resume-input').addEventListener('change', handleFileUpload);
 </script>
 
 </body>
