@@ -39,17 +39,16 @@
 </footer>
 
 <script>
-  // Function to load the default resume
-  function loadDefaultResume() {
-    // Update the URL with the embeddable URL of your resume hosted on Google Drive
-    const resumeURL = 'https://drive.google.com/file/d/13ODL2KiF7rsopj6YnUF7BaP4AFeXtl-t/preview'; // Replace with your actual Google Drive PDF URL
-    document.getElementById('resume-content').innerHTML = `<embed src="${resumeURL}" type="application/pdf" width="100%" height="600px" />`;
+  // Function to load the resume from your files
+  function loadResumeFromFiles() {
+    // Update the file path with the name of your resume PDF file
+    const resumeFilePath = 'BASABANDA,JORDAN RESUME.pdf'; // Replace with the name of your resume PDF file
+    document.getElementById('resume-content').innerHTML = `<embed src="${resumeFilePath}" type="application/pdf" width="100%" height="600px" />`;
   }
 
-  // Call the function to load the default resume when the page loads
-  window.addEventListener('DOMContentLoaded', loadDefaultResume);
+  // Call the function to load the resume when the page loads
+  window.addEventListener('DOMContentLoaded', loadResumeFromFiles);
 </script>
 
 </body>
 </html>
-
