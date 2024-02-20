@@ -51,8 +51,8 @@
 
   <section class="resume-section">
     <h2>Resume</h2>
-    <input type="file" id="resume-input" accept=".txt,.pdf,.doc,.docx">
-    <button onclick="loadResume()">Upload Resume</button>
+    <input type="file" id="resume-input" accept=".txt,.pdf,.doc,.docx" style="display: none;">
+    <button onclick="document.getElementById('resume-input').click()">Choose Another Resume</button>
     <div id="resume-content">
       <!-- Resume content will be dynamically loaded here -->
     </div>
@@ -61,22 +61,33 @@
 </div>
 
 <script>
-  // Function to load resume content from a file
-  function loadResume() {
-    const fileInput = document.getElementById('resume-input');
-    const file = fileInput.files[0];
+  // Function to load the default resume
+  function loadDefaultResume() {
+    // Here, you can define the default resume content
+    const defaultResumeContent = "Your default resume content goes here.";
+    document.getElementById('resume-content').innerText = defaultResumeContent;
+  }
+
+  // Call the function to load the default resume when the page loads
+  window.addEventListener('DOMContentLoaded', loadDefaultResume);
+
+  // Function to handle file upload
+  function handleFileUpload(event) {
+    const file = event.target.files[0];
     if (!file) {
-      alert('Please select a file.');
       return;
     }
 
     const reader = new FileReader();
     reader.onload = function(event) {
       const resumeContent = event.target.result;
-      document.getElementById('resume-content').innerHTML = resumeContent;
+      document.getElementById('resume-content').innerText = resumeContent;
     };
     reader.readAsText(file);
   }
+
+  // Add event listener to the file input
+  document.getElementById('resume-input').addEventListener('change', handleFileUpload);
 </script>
 
 </body>
