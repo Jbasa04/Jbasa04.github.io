@@ -1,7 +1,7 @@
 /* General styles */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #ae9142;
+  background-color: #0c2340;
   margin: 0;
   padding: 0;
 }
@@ -14,8 +14,8 @@ body {
 
 /* Header styles */
 header {
-  background-color: #051c61;
-  color: #fff;
+  background-color: #ae9142;
+  color: #f8f4ec;
   padding: 20px;
   text-align: center;
 }
@@ -34,8 +34,8 @@ header p {
 }
 
 .resume-section h2 {
-  color: #333;
-  border-bottom: 2px solid #333;
+  color: #f8f4ec;
+  border-bottom: 2px solid #f8f4ec;
   padding-bottom: 10px;
 }
 
