@@ -22,11 +22,13 @@
     </div>
   </section>
 
-  <!-- Add a button to play Breakout -->
-  <button id="playButton" onclick="toggleGame()">Play Breakout</button>
+  <!-- Add a link to trigger the game -->
+  <a href="#" id="game-link">Test Breakout</a>
 
-  <!-- Add a canvas element for the game (hidden by default) -->
-  <canvas id="gameCanvas" width="800" height="600" style="display: none;"></canvas>
+  <!-- Add a container for the canvas -->
+  <div id="game-container" style="display: none;">
+    <canvas id="gameCanvas" width="400" height="300"></canvas>
+  </div>
 
 </div>
 
@@ -49,38 +51,6 @@
 <script src="project.js"></script>
 
 <script>
-  // Function to toggle game start/stop
-  function toggleGame() {
-    var playButton = document.getElementById('playButton');
-    var canvas = document.getElementById('gameCanvas');
-    
-    if (playButton.innerText === 'Play Breakout') {
-      // Show the canvas element
-      canvas.style.display = 'block';
-      
-      // Initialize and start the Breakout game
-      initializeGame();
-      gameInterval = setInterval(function() {
-          drawGame();
-          updateGame();
-      }, 30);
-      
-      // Change button text to "Stop Game"
-      playButton.innerText = 'Stop Game';
-    } else {
-      // Stop the game loop
-      clearInterval(gameInterval);
-      
-      // Hide the canvas element
-      canvas.style.display = 'none';
-      
-      // Change button text to "Play Breakout"
-      playButton.innerText = 'Play Breakout';
-    }
-  }
-</script>
-
-<script>
   // Function to load the resume from your files
   function loadResumeFromFiles() {
     // Update the file path with the name of your resume PDF file
@@ -90,6 +60,13 @@
 
   // Call the function to load the resume when the page loads
   window.addEventListener('DOMContentLoaded', loadResumeFromFiles);
+
+  // Add an event listener to the game link to show the game container
+  document.getElementById('game-link').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent the default link behavior
+    document.getElementById('game-container').style.display = 'block'; // Show the game container
+    initializeGame(); // Initialize the game
+  });
 </script>
 
 </body>
