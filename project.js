@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const WIDTH = 800;
-    const HEIGHT = 600;
+    const WIDTH = 400;
+    const HEIGHT = 300;
 
     let ctx;
     let ball = {
