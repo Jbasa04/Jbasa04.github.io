@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let bricks = [];
     let bricksLeft = brickRows * brickCols;
     let lives = 3;
+    let gameInterval;
 
     function initializeGame() {
         for (let i = 0; i < brickCols; i++) {
@@ -44,6 +45,12 @@ document.addEventListener('DOMContentLoaded', function() {
         document.addEventListener('keydown', function(event) {
             handleKeyPress(event.keyCode);
         });
+
+        // Start the game loop
+        gameInterval = setInterval(function() {
+            drawGame();
+            updateGame();
+        }, 30);
     }
 
     function drawGame() {
@@ -84,8 +91,22 @@ document.addEventListener('DOMContentLoaded', function() {
         if (ball.x - ball.radius < 0 || ball.x + ball.radius > WIDTH) {
             ball.speedX = -ball.speedX;
         }
-        if (ball.y - ball.radius < 0 || ball.y + ball.radius > HEIGHT) {
+        if (ball.y - ball.radius < 0) {
             ball.speedY = -ball.speedY;
+        }
+        if (ball.y + ball.radius > HEIGHT) {
+            lives--;
+            if (lives <= 0) {
+                clearInterval(gameInterval); // Stop the game loop
+                document.getElementById('game-container').style.display = 'none'; // Hide the game container
+                alert('Game Over! You LOST');
+                return; // Exit the function
+            } else {
+                ball.x = WIDTH / 2;
+                ball.y = HEIGHT / 2;
+                paddle.x = (WIDTH - paddle.width) / 2;
+                ball.speedY = 2;
+            }
         }
 
         if (ball.x + ball.radius >= paddle.x && ball.x - ball.radius <= paddle.x + paddle.width &&
@@ -101,6 +122,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     brick.isAlive = false;
                     bricksLeft--;
                     if (bricksLeft === 0) {
+                        clearInterval(gameInterval); // Stop the game loop
+                        document.getElementById('game-container').style.display = 'none'; // Hide the game container
                         alert('All bricks knocked out!');
                     }
                     break;
@@ -115,18 +138,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (paddle.x + paddle.width > WIDTH) {
             paddle.x = WIDTH - paddle.width;
         }
-
-        if (ball.y + ball.radius >= HEIGHT) {
-            lives--;
-            if (lives > 0) {
-                ball.x = WIDTH / 2;
-                ball.y = HEIGHT / 2;
-                paddle.x = (WIDTH - paddle.width) / 2;
-                ball.speedY = 2;
-            } else {
-                alert('Game Over! You LOST');
-            }
-        }
     }
 
     function handleKeyPress(keyCode) {
@@ -137,10 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    initializeGame();
-    setInterval(function() {
-        drawGame();
-        updateGame();
-    }, 30);
+    // Expose initializeGame function for external use
+    window.initializeGame = initializeGame;
 });
 
