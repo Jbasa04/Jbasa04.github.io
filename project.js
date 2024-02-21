@@ -24,7 +24,8 @@ document.addEventListener('DOMContentLoaded', function() {
     let bricks = [];
     let bricksLeft = brickRows * brickCols;
     let lives = 3;
-    let gameInterval;
+
+    let gameInterval; // Variable to store the interval ID for the game loop
 
     function initializeGame() {
         for (let i = 0; i < brickCols; i++) {
@@ -46,7 +47,6 @@ document.addEventListener('DOMContentLoaded', function() {
             handleKeyPress(event.keyCode);
         });
 
-        // Start the game loop
         gameInterval = setInterval(function() {
             drawGame();
             updateGame();
@@ -108,36 +108,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 ball.speedY = 2;
             }
         }
-
-        if (ball.x + ball.radius >= paddle.x && ball.x - ball.radius <= paddle.x + paddle.width &&
-            ball.y + ball.radius >= paddle.y && ball.y - ball.radius <= paddle.y + paddle.height) {
-            ball.speedY = -ball.speedY;
-        }
-
-        for (let brick of bricks) {
-            if (brick.isAlive) {
-                if (ball.x + ball.radius >= brick.x && ball.x - ball.radius <= brick.x + brick.width &&
-                    ball.y + ball.radius >= brick.y && ball.y - ball.radius <= brick.y + brick.height) {
-                    ball.speedY = -ball.speedY;
-                    brick.isAlive = false;
-                    bricksLeft--;
-                    if (bricksLeft === 0) {
-                        clearInterval(gameInterval); // Stop the game loop
-                        document.getElementById('game-container').style.display = 'none'; // Hide the game container
-                        alert('All bricks knocked out!');
-                    }
-                    break;
-                }
-            }
-        }
-
-        paddle.x += paddle.speed;
-        if (paddle.x < 0) {
-            paddle.x = 0;
-        }
-        if (paddle.x + paddle.width > WIDTH) {
-            paddle.x = WIDTH - paddle.width;
-        }
     }
 
     function handleKeyPress(keyCode) {
@@ -148,7 +118,27 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Expose initializeGame function for external use
-    window.initializeGame = initializeGame;
+    // Function to reset the game state
+    function resetGame() {
+        lives = 3;
+        ball.x = WIDTH / 2;
+        ball.y = HEIGHT / 2;
+        paddle.x = (WIDTH - paddle.width) / 2;
+        bricksLeft = brickRows * brickCols;
+        bricks = [];
+        initializeGame(); // Reinitialize the game
+    }
+
+    // Add an event listener to the game link to show/hide the game container
+    document.getElementById('game-link').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default link behavior
+        let gameContainer = document.getElementById('game-container');
+        if (gameContainer.style.display === 'none') {
+            gameContainer.style.display = 'block'; // Show the game container
+            resetGame(); // Reset the game state
+        } else {
+            gameContainer.style.display = 'none'; // Hide the game container
+        }
+    });
 });
 
