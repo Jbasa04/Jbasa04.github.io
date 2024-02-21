@@ -61,7 +61,7 @@
   // Call the function to load the resume when the page loads
   window.addEventListener('DOMContentLoaded', loadResumeFromFiles);
 
-  // Add an event listener to the game link to show the game container and initialize the game
+  // Add an event listener to the game link to show the game container
   document.getElementById('game-link').addEventListener('click', function(event) {
     event.preventDefault(); // Prevent the default link behavior
     document.getElementById('game-container').style.display = 'block'; // Show the game container
