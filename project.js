@@ -99,7 +99,6 @@ document.addEventListener('DOMContentLoaded', function() {
             if (lives <= 0) {
                 clearInterval(gameInterval); // Stop the game loop
                 document.getElementById('game-container').style.display = 'none'; // Hide the game container
-                alert('Game Over! You LOST');
                 return; // Exit the function
             } else {
                 ball.x = WIDTH / 2;
