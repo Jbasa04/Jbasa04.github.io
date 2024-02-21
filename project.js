@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
         x: WIDTH / 2,
         y: HEIGHT / 2,
         radius: 10,
-        speedX: 3,
-        speedY: 3
+        speedX: 4,
+        speedY: 4
     };
 
     let paddle = {
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         ctx.font = '16px Arial';
-        ctx.fillStyle = '#000000';
+        ctx.fillStyle = '#f8f4ec';
         ctx.fillText('Bricks Remaining: ' + bricksLeft, 10, HEIGHT - 20);
         ctx.fillText('Lives Left: ' + lives, 10, HEIGHT - 40);
     }

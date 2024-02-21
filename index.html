@@ -69,11 +69,16 @@
   // Call the function to load the resume when the page loads
   window.addEventListener('DOMContentLoaded', loadResumeFromFiles);
 
-  // Add an event listener to the game link to show the game container
+  // Add an event listener to the game link to toggle the game container
   document.getElementById('game-link').addEventListener('click', function(event) {
     event.preventDefault(); // Prevent the default link behavior
-    document.getElementById('game-container').style.display = 'block'; // Show the game container
-    initializeGame(); // Initialize the game
+    const gameContainer = document.getElementById('game-container');
+    if (gameContainer.style.display === 'none') {
+      gameContainer.style.display = 'block'; // Show the game container
+      initializeGame(); // Initialize the game
+    } else {
+      gameContainer.style.display = 'none'; // Hide the game container
+    }
   });
 </script>
 
