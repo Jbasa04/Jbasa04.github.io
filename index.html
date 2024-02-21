@@ -55,28 +55,17 @@
   function loadResumeFromFiles() {
     // Update the file path with the name of your resume PDF file
     const resumeFilePath = 'BASABANDA,JORDAN RESUME.pdf'; // Replace with the name of your resume PDF file
-    document.getElementById('resume-content').innerHTML = `<embed src="${resumeFilePath}" type="application/pdf" width="100%" heig
-ht="600px" />`;
+    document.getElementById('resume-content').innerHTML = `<embed src="${resumeFilePath}" type="application/pdf" width="100%" height="600px" />`;
   }
 
   // Call the function to load the resume when the page loads
   window.addEventListener('DOMContentLoaded', loadResumeFromFiles);
 
-  // Function to toggle game start/stop
-  function toggleGame() {
-    var gameContainer = document.getElementById('game-container');
-    if (gameContainer.style.display === 'none') {
-      gameContainer.style.display = 'block'; // Show the game container
-      initializeGame(); // Initialize the game
-    } else {
-      gameContainer.style.display = 'none'; // Hide the game container
-    }
-  }
-
-  // Add an event listener to the game link to show/hide the game container
+  // Add an event listener to the game link to show the game container
   document.getElementById('game-link').addEventListener('click', function(event) {
     event.preventDefault(); // Prevent the default link behavior
-    toggleGame(); // Toggle the game container
+    document.getElementById('game-container').style.display = 'block'; // Show the game container
+    initializeGame(); // Initialize the game
   });
 </script>
 
