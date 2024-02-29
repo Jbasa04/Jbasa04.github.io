@@ -1,9 +1,7 @@
 /* styles.css */
-
-/* Body styles */
 body {
   margin: 0;
-  font-family: Arial, sans-serif; /* Add font-family */
+  font-family: Arial, sans-serif;
 }
 
 /* Header Section */
@@ -36,13 +34,6 @@ body {
 .container {
   width: 80%;
   max-width: 600px; /* Adjust maximum width as needed */
-}
-
-.logo {
-  position: absolute;
-  top: 50%; /* Center the logo vertically */
-  left: 50%; /* Center the logo horizontally */
-  transform: translate(-50%, -50%); /* Center the logo */
 }
 
 .color-change {
