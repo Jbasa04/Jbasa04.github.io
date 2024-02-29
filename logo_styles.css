@@ -1,13 +1,13 @@
-/* styles.css */
+/* logo_styles.css */
 
 /* Main Section */
 .main {
   background-color: #ff7f7f; /* Light red */
-  height: auto; /* Allow the main section to adjust its height based on content */
+  height: 100vh; /* Adjust height to fill the viewport */
   display: flex;
   flex-direction: column; /* Stack child elements vertically */
-  justify-content: flex-start; /* Align items at the start of the main axis */
-  align-items: center; /* Center items along the cross axis */
+  justify-content: center;
+  align-items: center;
   position: relative;
   overflow: hidden; /* Hide overflow content */
 }
@@ -15,9 +15,21 @@
 .container {
   width: 80%;
   max-width: 600px; /* Adjust maximum width as needed */
-  height: auto; /* Adjust height to fit content */
-  margin-top: 10px; /* Add margin at the top */
-  margin-bottom: 10px; /* Add margin at the bottom */
+  height: 100%; /* Make container same height as main */
+  position: relative; /* Position relative to allow absolute positioning of logo */
+}
+
+.logo {
+  position: absolute;
+  top: 0; /* Initial position at the top */
+  right: 0; /* Initial position at the right */
+  transition: transform 5s linear;
+}
+
+.color-change {
+  width: 100%;
+  height: 100%; /* Adjust height to fill the container */
+  background-color: #ff0000; /* Red */
 }
 
 /* Footer Section */
@@ -25,8 +37,18 @@
   background-color: #ffc0cb; /* Light pink */
   color: white;
   padding: 10px;
+  position: fixed;
+  bottom: 0;
   width: 100%;
   text-align: center;
-  margin-top: 10px; /* Add margin at the top */
 }
+
+.date-time-box {
+  font-size: 18px;
+}
+
+.ticket-expiration {
+  font-size: 14px;
+}
+
 
