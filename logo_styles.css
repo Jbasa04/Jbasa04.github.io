@@ -1,28 +1,23 @@
 /* styles.css */
 
-/* Header Section */
-.header {
-  background-color: #8b0000; /* Dark red */
-  color: white;
-  padding: 10px;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between; /* Spacing between header text boxes */
-  margin-bottom: 10px; /* Add margin at the bottom */
-}
-
 /* Main Section */
 .main {
   background-color: #ff7f7f; /* Light red */
-  height: calc(100vh - 40px); /* Adjust height to fill the viewport minus header and footer margins */
+  height: auto; /* Allow the main section to adjust its height based on content */
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column; /* Stack child elements vertically */
+  justify-content: flex-start; /* Align items at the start of the main axis */
+  align-items: center; /* Center items along the cross axis */
   position: relative;
   overflow: hidden; /* Hide overflow content */
-  margin: 10px 0; /* Add margin at the top and bottom */
+}
+
+.container {
+  width: 80%;
+  max-width: 600px; /* Adjust maximum width as needed */
+  height: auto; /* Adjust height to fit content */
+  margin-top: 10px; /* Add margin at the top */
+  margin-bottom: 10px; /* Add margin at the bottom */
 }
 
 /* Footer Section */
@@ -30,8 +25,6 @@
   background-color: #ffc0cb; /* Light pink */
   color: white;
   padding: 10px;
-  position: fixed;
-  bottom: 0;
   width: 100%;
   text-align: center;
   margin-top: 10px; /* Add margin at the top */
