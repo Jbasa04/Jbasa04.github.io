@@ -23,7 +23,7 @@ window.onload = function() {
     if (isLightRed) {
       main.style.backgroundColor = '#ff0000'; // Set to dark red
     } else {
-      main.style.backgroundColor = '#ff7f7f'; // Set to light red
+      main.style.backgroundColor = '#7f281f'; // Set to light red
     }
     isLightRed = !isLightRed; // Toggle the state
   }
