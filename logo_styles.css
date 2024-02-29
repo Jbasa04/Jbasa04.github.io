@@ -40,6 +40,7 @@ body {
 .container {
   width: 80%;
   max-width: 600px; /* Adjust maximum width as needed */
+  height: 100%; /* Make container same height as main */
   position: relative; /* Position relative to allow absolute positioning of logo */
 }
 
