@@ -1,4 +1,34 @@
 /* logo_styles.css */
+.header {
+  display: flex;
+  justify-content: space-between; /* Distribute items evenly */
+  align-items: center; /* Align items vertically */
+  position: relative; /* Position for the triangle */
+}
+
+.left-textbox {
+  background-color: #ffc0cb; /* Light pink */
+  padding: 10px; /* Adjust padding as needed */
+  position: relative; /* Position for the triangle */
+  z-index: 1; /* Ensure the triangle appears behind the text */
+}
+
+.right-textbox {
+  background-color: #7f281f; /* Dark red */
+  padding: 10px; /* Adjust padding as needed */
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 30px 0 30px 30px; /* Adjust triangle size */
+  border-color: transparent transparent transparent #ffc0cb; /* Light pink */
+  position: absolute;
+  top: 50%;
+  right: -15px; /* Adjust triangle position */
+  transform: translateY(-50%); /* Center triangle vertically */
+}
 
 .header {
   display: flex;
