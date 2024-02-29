@@ -1,40 +1,34 @@
-// logo_script.js
-document.addEventListener('DOMContentLoaded', function() {
-  const logoContainer = document.querySelector('.container');
+// script.js
+window.onload = function() {
+  const container = document.querySelector('.container');
+  const mainSection = document.querySelector('.main');
 
-  // Function to create and animate a logo
-  function animateLogo() {
-    const logo = document.createElement('img');
-    logo.src = 'logo.png';
-    logo.alt = 'Logo';
-    logo.classList.add('logo');
-
-    // Initial position of logo (top right)
-    logo.style.top = '0';
-    logo.style.right = '0';
-    logoContainer.appendChild(logo);
-
-    // Final position of logo (bottom left)
-    const finalTop = logoContainer.clientHeight - logo.clientHeight;
-    const finalRight = logoContainer.clientWidth - logo.clientWidth;
-
-    // Animation: Move from top right to bottom left
-    logo.style.transition = 'transform 5s linear';
-    logo.style.transform = `translate(${finalRight}px, ${finalTop}px)`;
-
-    // Remove logo after animation completes
-    logo.addEventListener('transitionend', function() {
-      logo.remove();
-    });
-  }
-
-  // Function to repeatedly animate logos every second
   function spawnLogo() {
-    animateLogo();
-    setTimeout(spawnLogo, 1000); // Spawn a new logo every 1 second
+    const newLogo = document.createElement('img');
+    newLogo.src = 'logo.png';
+    newLogo.alt = 'Logo';
+    newLogo.className = 'logo';
+    container.appendChild(newLogo);
+
+    setTimeout(() => {
+      newLogo.style.transform = 'translate(calc(-50% + 100vw), calc(-50% + 100vh))'; /* Move logo to bottom left */
+    }, 100); // Adjust the delay as needed
   }
 
-  // Start spawning logos
-  spawnLogo();
-});
+  setInterval(spawnLogo, 2000); // Adjust the interval as needed
+
+  // Function to handle color change on touch/click
+  function changeColor() {
+    const currentColor = mainSection.style.backgroundColor;
+    if (currentColor === 'rgb(139, 0, 0)') {
+      mainSection.style.backgroundColor = '#ff7f7f'; // Light red
+    } else {
+      mainSection.style.backgroundColor = '#8b0000'; // Dark red
+    }
+  }
+
+  // Event listeners for touch and click events to trigger color change
+  document.addEventListener('touchstart', changeColor);
+  document.addEventListener('click', changeColor);
+};
 
