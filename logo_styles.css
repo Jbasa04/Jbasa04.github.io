@@ -3,7 +3,7 @@
 /* Body styles */
 body {
   margin: 0;
-  font-family: Arial, sans-serif; /* Add font-family */
+  font-family: Arial, sans-serif;
 }
 
 /* Header Section */
@@ -11,17 +11,18 @@ body {
   background-color: #8b0000; /* Dark red */
   color: white;
   padding: 10px;
-  display: flex;
-  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure header is above other elements */
 }
 
 .left-textbox {
-  width: 50%;
+  float: left;
 }
 
 .right-textbox {
-  width: 50%;
-  text-align: right;
+  float: right;
 }
 
 /* Main Section */
@@ -31,6 +32,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
 }
 
 .container {
@@ -39,10 +45,7 @@ body {
 }
 
 .logo {
-  position: absolute;
-  top: 50%; /* Center the logo vertically */
-  left: 50%; /* Center the logo horizontally */
-  transform: translate(-50%, -50%); /* Center the logo */
+  transition: transform 5s linear;
 }
 
 .color-change {
@@ -56,6 +59,9 @@ body {
   background-color: #ffc0cb; /* Light pink */
   color: white;
   padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   text-align: center;
 }
 
