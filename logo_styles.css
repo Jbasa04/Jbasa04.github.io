@@ -1,4 +1,10 @@
-/* logo_styles.css */
+/* styles.css */
+
+/* Body styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif; /* Add font-family */
+}
 
 /* Header Section */
 .header {
@@ -32,8 +38,11 @@
   max-width: 600px; /* Adjust maximum width as needed */
 }
 
-.logo-container {
-  margin-bottom: 20px; /* Add space between logo and color-change area */
+.logo {
+  position: absolute;
+  top: 50%; /* Center the logo vertically */
+  left: 50%; /* Center the logo horizontally */
+  transform: translate(-50%, -50%); /* Center the logo */
 }
 
 .color-change {
