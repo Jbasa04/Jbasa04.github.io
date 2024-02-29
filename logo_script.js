@@ -30,7 +30,6 @@ window.onload = function() {
 // Event listener for click or touch on the main element
 main.addEventListener('click', toggleColor);
 main.addEventListener('touchstart', toggleColor);
-main.addEventListener('touchend', toggleColor);
 
   setInterval(spawnLogo, 2000); // Adjust the interval as needed
 };
