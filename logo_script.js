@@ -18,6 +18,7 @@ window.onload = function() {
   }
 
   function toggleColor() {
+    console.log("Color toggled"); // Check if the function is being called
     if (isLightRed) {
       container.style.backgroundColor = '#ff0000'; // Set to dark red
     } else {
