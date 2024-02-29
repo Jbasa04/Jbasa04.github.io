@@ -1,8 +1,4 @@
-/* styles.css */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
+/* logo_styles.css */
 
 /* Header Section */
 .header {
@@ -34,6 +30,10 @@ body {
 .container {
   width: 80%;
   max-width: 600px; /* Adjust maximum width as needed */
+}
+
+.logo-container {
+  margin-bottom: 20px; /* Add space between logo and color-change area */
 }
 
 .color-change {
