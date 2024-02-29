@@ -1,5 +1,12 @@
 /* logo_styles.css */
 
+.left-textbox, .right-textbox {
+  background-color: #7f281f; /* Dark red */
+  color: white; /* Text color */
+  padding: 10px; /* Adjust padding as needed */
+  font-family: 'Barlow', sans-serif; /* Specify Barlow font, fallback to sans-serif */
+}
+
 /* Main Section */
 .main {
   background-color: #ff7f7f; /* Light red */
