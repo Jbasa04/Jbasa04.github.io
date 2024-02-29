@@ -26,6 +26,12 @@
   transition: transform 5s linear;
 }
 
+.logo {
+  max-width: 100px; /* Adjust as needed */
+  max-height: 100px; /* Adjust as needed */
+  width: auto;
+  height: auto;
+}
 
 /* Footer Section */
 .footer {
