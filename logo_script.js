@@ -1,5 +1,5 @@
 window.onload = function() {
-  const container = document.querySelector('.container');
+  const main = document.querySelector('.main');
   const logo = document.querySelector('.logo');
 
   // Variable to track color state
@@ -10,7 +10,7 @@ window.onload = function() {
     newLogo.src = 'logo.png';
     newLogo.alt = 'Logo';
     newLogo.className = 'logo';
-    container.appendChild(newLogo);
+    main.appendChild(newLogo);
 
     setTimeout(() => {
       newLogo.style.transform = 'translate(-100vw, 100vh)'; /* adjust as needed */
@@ -20,16 +20,16 @@ window.onload = function() {
   function toggleColor() {
     console.log("Color toggled"); // Check if the function is being called
     if (isLightRed) {
-      container.style.backgroundColor = '#ff0000'; // Set to dark red
+      main.style.backgroundColor = '#ff0000'; // Set to dark red
     } else {
-      container.style.backgroundColor = '#ff7f7f'; // Set to light red
+      main.style.backgroundColor = '#ff7f7f'; // Set to light red
     }
     isLightRed = !isLightRed; // Toggle the state
   }
 
-  // Event listener for click or touch
-  container.addEventListener('click', toggleColor);
-  container.addEventListener('touchstart', toggleColor);
+  // Event listener for click or touch on the main element
+  main.addEventListener('click', toggleColor);
+  main.addEventListener('touchstart', toggleColor);
 
   setInterval(spawnLogo, 2000); // Adjust the interval as needed
 };
