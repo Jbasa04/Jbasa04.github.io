@@ -1,29 +1,4 @@
-/* styles.css */
-
-/* Body styles */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
-
-/* Header Section */
-.header {
-  background-color: #8b0000; /* Dark red */
-  color: white;
-  padding: 10px;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000; /* Ensure header is above other elements */
-}
-
-.left-textbox {
-  float: left;
-}
-
-.right-textbox {
-  float: right;
-}
+/* logo_styles.css */
 
 /* Main Section */
 .main {
@@ -46,14 +21,14 @@ body {
 
 .logo {
   position: absolute;
-  top: 0; /* Position logo at the top of container */
-  right: 0; /* Position logo at the right of container */
+  top: 0; /* Initial position at the top */
+  right: 0; /* Initial position at the right */
   transition: transform 5s linear;
 }
 
 .color-change {
   width: 100%;
-  height: 200px; /* Adjust height as needed */
+  height: 100%; /* Adjust height to fill the container */
   background-color: #ff0000; /* Red */
 }
 
