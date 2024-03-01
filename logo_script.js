@@ -1,5 +1,4 @@
 window.onload = function() {
-
   const main = document.querySelector('.main');
   const logo = document.querySelector('.logo');
 
@@ -21,18 +20,17 @@ window.onload = function() {
   function toggleColor() {
     console.log("Color toggled"); // Check if the function is being called
     if (isLightRed) {
-      main.style.backgroundColor = '#ff0000'; // Set to dark red
+      main.style.background = 'linear-gradient(#ff7f7f, #7f281f)'; // Dark red to light red gradient
     } else {
-      main.style.backgroundColor = '#7f281f'; // Set to light red
+      main.style.background = 'linear-gradient(#7f281f, #ff0000)'; // Light red to dark red gradient
     }
     isLightRed = !isLightRed; // Toggle the state
   }
 
-// Event listener for click or touch on the main element
-main.addEventListener('click', toggleColor);
-main.addEventListener('touchstart', toggleColor);
-main.addEventListener('touchend', toggleColor);
-
+  // Event listener for click or touch on the main element
+  main.addEventListener('click', toggleColor);
+  main.addEventListener('touchstart', toggleColor);
+  main.addEventListener('touchend', toggleColor);
 
   setInterval(spawnLogo, 2000); // Adjust the interval as needed
 };

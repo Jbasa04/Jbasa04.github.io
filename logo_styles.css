@@ -8,7 +8,7 @@
 
 .left-textbox {
   background-color: #ffc0cb; /* Light pink */
-  padding: 10px; /* Adjust padding as needed */
+  padding: 30px; /* Adjust padding as needed */
   position: relative; /* Position for the triangle */
   z-index: 1; /* Ensure the triangle appears behind the text */
 }
@@ -36,14 +36,18 @@
   align-items: center; /* Align items vertically */
 }
 
+.left-textbox{
+  text-align: center;
+}
+
 .right-textbox {
-  text-align: right; /* Align text to the right within the right-textbox */
+  text-align: center; /* Align text to the right within the right-textbox */
 }
 
 .left-textbox, .right-textbox {
-  background-color: #7f281f; /* Dark red */
   color: white; /* Text color */
-  padding: 10px; /* Adjust padding as needed */
+  padding: 30px; /* Adjust padding as needed */
+  font-size: 40px;
   font-family: 'Barlow', sans-serif; /* Specify Barlow font, fallback to sans-serif */
 }
 
@@ -98,5 +102,6 @@
 .ticket-expiration {
   font-size: 14px;
 }
+
 
 
