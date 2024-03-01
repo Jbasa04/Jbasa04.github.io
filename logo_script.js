@@ -13,7 +13,7 @@ window.onload = function() {
     main.appendChild(newLogo);
 
     setTimeout(() => {
-      newLogo.style.transform = 'translate(-100vw, 100vh)'; /* adjust as needed */
+      newLogo.style.transform = 'translate(-150vw, 100vh)'; /* adjust as needed */
     }, 100); // Adjust the delay as needed
   }
 
@@ -32,7 +32,7 @@ window.onload = function() {
   main.addEventListener('touchstart', toggleColor);
   main.addEventListener('touchend', toggleColor);
 
-  setInterval(spawnLogo, 2000); // Adjust the interval as needed
+  setInterval(spawnLogo, 1000); // Adjust the interval as needed
 };
 
 
