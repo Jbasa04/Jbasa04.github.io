@@ -11,23 +11,24 @@
 }
 
 .left-textbox {
-  background-color: #ffc0cb; /* Light pink */
-  padding:0px; /* Adjust padding as needed */
+  background-image: linear-gradient(to bottom, #f791b8, #f791b8 50%, #f679a9 50%, #f679a9); /* Light pink to dark pink */
+  padding: 10px; /* Adjust padding as needed */
   position: relative; /* Position for the triangle */
   z-index: 1; /* Ensure the triangle appears behind the text */
 }
 
 .right-textbox {
-  background-color: #7f281f; /* Dark red */
-   /* Adjust padding as needed */
+  background-image: linear-gradient(to bottom, #811a1ae0, #811a1ae0 50%, #7f281f 50%, #7f281f); /* Light red to dark red */
+  padding: 10px; /* Adjust padding as needed */
 }
+
 
 .triangle {
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 30px 0 30px 30px; /* Adjust triangle size */
-  border-color: transparent transparent transparent #ffc0cb; /* Light pink */
+  border-width: 15px 0 15px 15px; /* Adjust triangle size */
+  border-color: transparent transparent transparent #f791b8; /* Light pink */
   position: absolute;
   top: 50%;
   right: -15px; /* Adjust triangle position */
@@ -112,6 +113,7 @@
 .ticket-expiration {
   font-size: 14px;
 }
+
 
 
 

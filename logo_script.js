@@ -17,12 +17,12 @@ window.onload = function() {
     }, 100); // Adjust the delay as needed
   }
 
-  function toggleColor() {
+function toggleColor() {
     console.log("Color toggled"); // Check if the function is being called
     if (isLightRed) {
-      main.style.background = 'linear-gradient(#ff7f7f, #7f281f)'; // Dark red to light red gradient
+      main.style.background = 'linear-gradient(to bottom, #ff7f7f, #ff7f7f 50%, #7f281f 50%, #7f281f)'; // Dark red to light red gradient
     } else {
-      main.style.background = 'linear-gradient(#7f281f, #ff0000)'; // Light red to dark red gradient
+      main.style.background = 'linear-gradient(to bottom, #7f281f, #7f281f 50%, #ff0000 50%, #ff0000)'; // Light red to dark red gradient
     }
     isLightRed = !isLightRed; // Toggle the state
   }
