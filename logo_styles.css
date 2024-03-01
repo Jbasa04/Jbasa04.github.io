@@ -6,20 +6,20 @@
 .header {
   display: flex;
   justify-content: space-between; /* Distribute items evenly */
-  align-items: center; /* Align items vertically */
+  align-items: ; /* Align items vertically */
   position: relative; /* Position for the triangle */
 }
 
 .left-textbox {
   background-color: #ffc0cb; /* Light pink */
-  padding: 30px; /* Adjust padding as needed */
+  padding:0px; /* Adjust padding as needed */
   position: relative; /* Position for the triangle */
   z-index: 1; /* Ensure the triangle appears behind the text */
 }
 
 .right-textbox {
   background-color: #7f281f; /* Dark red */
-  padding: 10px; /* Adjust padding as needed */
+   /* Adjust padding as needed */
 }
 
 .triangle {
@@ -37,7 +37,7 @@
 .header {
   display: flex;
   justify-content: space-between; /* Distribute items evenly, pushing the right-textbox to the right */
-  align-items: center; /* Align items vertically */
+  align-items: ; /* Align items vertically */
 }
 
 .left-textbox{
@@ -45,13 +45,19 @@
 }
 
 .right-textbox {
+  
   text-align: center; /* Align text to the right within the right-textbox */
 }
 
 .left-textbox, .right-textbox {
   color: white; /* Text color */
-  padding: 30px; /* Adjust padding as needed */
-  font-size: 40px;
+  padding:45px; /* Adjust padding as needed */
+  font-size: 25px;
+  width: 100px;
+  height: 50px;
+  font-style:bold;
+   line-height: 1.2;
+  
   font-family: 'Barlow', sans-serif; /* Specify Barlow font, fallback to sans-serif */
 }
 
@@ -106,6 +112,7 @@
 .ticket-expiration {
   font-size: 14px;
 }
+
 
 
 
