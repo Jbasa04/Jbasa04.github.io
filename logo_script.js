@@ -22,7 +22,7 @@ function toggleColor() {
     if (isLightRed) {
       main.style.background = 'linear-gradient(to bottom, #ff7f7f, #ff7f7f 50%, #7f281f 50%, #7f281f)'; // Dark red to light red gradient
     } else {
-      main.style.background = 'linear-gradient(to bottom, #f35858, #f35858 50%, #ff0000 50%, #ff0000)'; // Light red to dark red gradient
+      main.style.background = 'linear-gradient(to bottom, #f35858, #ff0000 50%, #ff0000 50%, #ff0000)'; // Light red to dark red gradient
     }
     isLightRed = !isLightRed; // Toggle the state
   }
