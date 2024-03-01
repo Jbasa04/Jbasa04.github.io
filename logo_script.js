@@ -1,9 +1,9 @@
 window.onload = function() {
-  const main = document.getElementById('main');
-  const bottomHalf = document.getElementById('bottomHalf');
+  const main = document.querySelector('.main');
+  const logo = document.querySelector('.logo');
 
   // Variable to track color state
-  let currentState = 1;
+  let isLightRed = false;
 
   function spawnLogo() {
     const newLogo = document.createElement('img');
@@ -19,13 +19,12 @@ window.onload = function() {
 
   function toggleColor() {
     console.log("Color toggled"); // Check if the function is being called
-    if (currentState === 1) {
-      bottomHalf.style.backgroundColor = '#ffc0cb'; // Bright pink
-      currentState = 2;
+    if (isLightRed) {
+      main.style.background = 'linear-gradient(#ff7f7f, #7f281f)'; // Dark red to light red gradient
     } else {
-      bottomHalf.style.backgroundColor = '#7f281f'; // Dark red
-      currentState = 1;
+      main.style.background = 'linear-gradient(#7f281f, #ff0000)'; // Light red to dark red gradient
     }
+    isLightRed = !isLightRed; // Toggle the state
   }
 
   // Event listener for click or touch on the main element
@@ -35,4 +34,5 @@ window.onload = function() {
 
   setInterval(spawnLogo, 2000); // Adjust the interval as needed
 };
+
 
