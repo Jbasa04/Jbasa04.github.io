@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         ctx.font = '16px Arial';
-        ctx.fillStyle = '#f8f4ec';
+        ctx.fillStyle = black;
         ctx.fillText('Bricks Remaining: ' + bricksLeft, 10, HEIGHT - 20);
         ctx.fillText('Lives Left: ' + lives, 10, HEIGHT - 40);
     }
