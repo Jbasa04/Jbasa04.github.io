@@ -71,9 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
-        ctx.font = '16px Arial';
         
-        ctx.fillText('Lives Left: ' + lives, 10, HEIGHT - 40);
     }
 
     function updateGame() {
