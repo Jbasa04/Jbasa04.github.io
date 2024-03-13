@@ -12,6 +12,11 @@ body {
   background-color: white; /* Add white background color */
 }
 
+.profile-picture {
+      max-width: 150px;
+      height: auto;
+      border-radius: 50%;
+    }
 /* Header styles */
 header {
   background-color: #ae9142;
