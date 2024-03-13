@@ -3,49 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jordan Basabanda - Resume</title>
+  <title>Jordan Basabanda - Homepage</title>
   <link rel="stylesheet" href="styles.css"> <!-- Link to the external CSS file -->
-
-  <!-- CSS styles to change the color of the hyperlink and footer text -->
-  <style>
-    #game-link,
-    .footer p {
-      color: #ae9142;
-    }
-    .profile-image {
-      float: left;
-      margin-right: 20px;
-      border-radius: 50%;
-    }
-  </style>
 </head>
 <body>
 
 <header>
-  <a href="about_me.html"><img src="your_icon_image.jpg" alt="Icon" class="profile-image"></a>
+  <a href="index.html"><img src="home_icon.png" alt="Home" class="home-icon"></a>
   <h1>Jordan Basabanda</h1>
   <p>Computer Science Student at The University of Notre Dame</p>
 </header>
 
 <div class="container">
 
-  <section class="resume-section">
-    <h2>Resume</h2>
-    <div id="resume-content">
-      <!-- Resume content will be dynamically loaded here -->
-    </div>
+  <section class="about-me-section">
+    <h2>About Me</h2>
+    <p>
+      My name is Jordan Basabanda. I am a Computer Science student at The University of Notre Dame.
+      I have a passion for programming and problem-solving. In my free time, I enjoy working on personal
+      coding projects, exploring new technologies, and playing basketball.
+    </p>
   </section>
 
-  <!-- Add a link to trigger the game -->
-<!--  <a href="logo.html" id="logo-link">View Animated Logo</a> <!-- Link to logo.html -->
-
-  <!-- Add a link to trigger the game -->
-  <a href="#" id="game-link">Test Breakout</a>
-
-  <!-- Add a container for the canvas -->
-  <div id="game-container" style="display: none;">
-    <canvas id="gameCanvas" width="400" height="300"></canvas>
-  </div>
+  <!-- Button to navigate to the resume page -->
+  <a href="resume.html" class="resume-button">Resume</a>
 
 </div>
 
@@ -63,33 +44,6 @@
     </div>
   </div>
 </footer>
-
-<!-- Include your JavaScript file -->
-<script src="project.js"></script>
-
-<script>
-  // Function to load the resume from your files
-  function loadResumeFromFiles() {
-    // Update the file path with the name of your resume PDF file
-    const resumeFilePath = 'BASABANDA,JORDAN RESUME.pdf'; // Replace with the name of your resume PDF file
-    document.getElementById('resume-content').innerHTML = `<embed src="${resumeFilePath}" type="application/pdf" width="100%" height="600px" />`;
-  }
-
-  // Call the function to load the resume when the page loads
-  window.addEventListener('DOMContentLoaded', loadResumeFromFiles);
-
-  // Add an event listener to the game link to toggle the game container
-  document.getElementById('game-link').addEventListener('click', function(event) {
-    event.preventDefault(); // Prevent the default link behavior
-    const gameContainer = document.getElementById('game-container');
-    if (gameContainer.style.display === 'none') {
-      gameContainer.style.display = 'block'; // Show the game container
-      initializeGame(); // Initialize the game
-    } else {
-      gameContainer.style.display = 'none'; // Hide the game container
-    }
-  });
-</script>
 
 </body>
 </html>
