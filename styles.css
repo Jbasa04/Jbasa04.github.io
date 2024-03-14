@@ -12,6 +12,10 @@ body {
   background-color: white; /* Add white background color */
 }
 
+.home-icon{
+  max-height: 100px;
+  }
+
 .profile-picture {
       max-width: 150px;
       height: auto;
