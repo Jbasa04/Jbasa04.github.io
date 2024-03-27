@@ -16,6 +16,9 @@
         .correct {
             background-color: lightgreen;
         }
+        .incorrect {
+            background-color: #ffcccc;
+        }
     </style>
 </head>
 <body>
@@ -38,93 +41,47 @@
         <section id="quizzes">
             <h2>Quizzes</h2>
             <div class="quiz-question">
-                <p>What is the capital of France?</p>
+                <p>Which of the following is a common intersex trait?</p>
                 <div class="quiz-answer">
-                    <input type="radio" name="q1" value="Paris" data-correct="true">
-                    <label for="q1">Paris</label>
+                    <input type="radio" name="q1" value="Paris">
+                    <label for="q1">XX chromosomes</label>
                 </div>
                 <div class="quiz-answer">
                     <input type="radio" name="q1" value="London">
-                    <label for="q1">London</label>
+                    <label for="q1">XY chromosomes</label>
                 </div>
                 <div class="quiz-answer">
-                    <input type="radio" name="q1" value="Berlin">
-                    <label for="q1">Berlin</label>
+                    <input type="radio" name="q1" value="XXY chromosomes" data-correct="true">
+                    <label for="q1">XXY chromosomes</label>
                 </div>
                 <div class="quiz-answer">
                     <input type="radio" name="q1" value="Rome">
-                    <label for="q1">Rome</label>
+                    <label for="q1">None of the above</label>
                 </div>
             </div>
             <div class="quiz-question">
-                <p>Which planet is known as the Red Planet?</p>
+                <p>What percentage of the population is estimated to be intersex?</p>
                 <div class="quiz-answer">
-                    <input type="radio" name="q2" value="Earth">
-                    <label for="q2">Earth</label>
+                    <input type="radio" name="q2" value="Less than 0.1%">
+                    <label for="q2">Less than 0.1%</label>
                 </div>
                 <div class="quiz-answer">
-                    <input type="radio" name="q2" value="Venus">
-                    <label for="q2">Venus</label>
+                    <input type="radio" name="q2" value="Around 1%">
+                    <label for="q2">Around 1%</label>
                 </div>
                 <div class="quiz-answer">
-                    <input type="radio" name="q2" value="Mars" data-correct="true">
-                    <label for="q2">Mars</label>
+                    <input type="radio" name="q2" value="Between 0.05% and 1.7%" data-correct="true">
+                    <label for="q2">Between 0.05% and 1.7%</label>
                 </div>
                 <div class="quiz-answer">
-                    <input type="radio" name="q2" value="Jupiter">
-                    <label for="q2">Jupiter</label>
+                    <input type="radio" name="q2" value="Over 5%">
+                    <label for="q2">Over 5%</label>
                 </div>
             </div>
             <button onclick="checkAnswers()">Submit Answers</button>
         </section>
 
-        <section id="articles">
-            <div class="container">
-                <h2>Articles</h2>
-                <!-- Article content goes here -->
-                <p>Explore informative articles on various aspects of intersexuality.</p>
-                <ul>
-                    <li><a href="#">Understanding Intersex Variation</a></li>
-                    <li><a href="#">Medicalization of Intersex Bodies</a></li>
-                    <li><a href="#">Navigating Intersex Identity</a></li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="videos">
-            <div class="container">
-                <h2>Videos</h2>
-                <!-- Video content goes here -->
-                <p>Watch educational videos and personal stories related to intersexuality.</p>
-                <ul>
-                    <li><a href="#">Documentary: Intersex Voices</a></li>
-                    <li><a href="#">Interview with Intersex Activist</a></li>
-                    <li><a href="#">Explaining Intersex to Children</a></li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="about">
-            <div class="container">
-                <h2>About Us</h2>
-                <!-- About Us content goes here -->
-                <p>Learn more about our organization and mission to raise awareness about intersexuality.</p>
-                <p>We are dedicated to promoting understanding, acceptance, and advocacy for intersex individuals.</p>
-            </div>
-        </section>
-
-        <section id="resources">
-            <div class="container">
-                <h2>Resources</h2>
-                <!-- Resources content goes here -->
-                <p>Access helpful resources and support networks for intersex individuals and their allies.</p>
-                <ul>
-                    <li><a href="#">Intersex Organizations</a></li>
-                    <li><a href="#">Legal Rights and Protections</a></li>
-                    <li><a href="#">Support Groups and Helplines</a></li>
-                </ul>
-            </div>
-        </section>
+        <!-- Other sections (articles, videos, about us, resources) can go here -->
     </div>
 
     <footer>
@@ -139,15 +96,28 @@
             const answerChoices = document.querySelectorAll('.quiz-answer');
             // Loop through answer choices
             answerChoices.forEach(choice => {
-                // Check if the choice is selected and correct
-                if (choice.querySelector('input').checked && choice.querySelector('input').dataset.correct === 'true') {
-                    // Add 'correct' class to correct answer
-                    choice.classList.add('correct');
+                // Get the input element
+                const input = choice.querySelector('input');
+                // Check if the choice is selected
+                if (input.checked) {
+                    // Check if the selected answer is correct
+                    if (input.dataset.correct === 'true') {
+                        // Add 'correct' class to correct answer
+                        choice.classList.add('correct');
+                    } else {
+                        // Add 'incorrect' class to incorrect answer
+                        choice.classList.add('incorrect');
+                        // Find the correct answer and highlight it
+                        const correctAnswer = choice.parentElement.querySelector('[data-correct="true"]');
+                        correctAnswer.parentElement.classList.add('correct');
+                    }
                 }
             });
             // Disable button after submission
-            document.querySelector('button').disabled = true;
+            document.querySelector('button').disabled
+ = true;
         }
+    }
     </script>
 </body>
 </html>
