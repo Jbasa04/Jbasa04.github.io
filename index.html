@@ -8,30 +8,10 @@
 </head>
 <body>
 
-<audio id="background-music" loop volume="0.4"> 
+<audio loop>
   <source src="carnival.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
-
-<script>
-  // Get the audio element
-  const audio = document.getElementById('background-music');
-
-  // Set the start time in seconds (2 minutes and 42 seconds)
-  const startTime = 2 * 60 + 42;
-
-  // Set the current time of the audio playback
-  audio.currentTime = startTime;
-
-  // Listen for the 'timeupdate' event to loop the audio
-  audio.addEventListener('timeupdate', function() {
-    // Check if the audio has reached the end
-    if (audio.currentTime >= audio.duration) {
-      // Reset the current time to start the loop
-      audio.currentTime = startTime;
-    }
-  });
-</script>
 
 <header>
   <a href="index.html"><img src="home_icon.png" alt="Home" class="home-icon"></a>
