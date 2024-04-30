@@ -43,14 +43,18 @@
             cursor: pointer;
             z-index: 1000; /* Ensure it's above other content */
         }
-        #videos li {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Aspect ratio (16:9) */
+            overflow: hidden;
         }
-        #videos li img {
-            width: 100px;
-            margin-right: 20px;
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
@@ -90,20 +94,15 @@
         <section id="videos">
             <h2>Videos</h2>
             <p>Watch educational videos and personal stories related to intersexuality.</p>
-            <ul>
-                <li>
-                    <img src="video1_thumbnail.jpg" alt="Video Thumbnail">
-                    <a href="https://www.youtube.com/watch?v=0C5hnlCM-j0">Documentary: Intersex Voices</a>
-                </li>
-                <li>
-                    <img src="video2_thumbnail.jpg" alt="Video Thumbnail">
-                    <a href="https://www.youtube.com/watch?v=H0k31FURJPg">Interview with Intersex Activist</a>
-                </li>
-                <li>
-                    <img src="video3_thumbnail.jpg" alt="Video Thumbnail">
-                    <a href="https://www.youtube.com/watch?v=agdTj9f3F0o">Explaining Intersex to Children</a>
-                </li>
-            </ul>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/0C5hnlCM-j0" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/H0k31FURJPg" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/agdTj9f3F0o" frameborder="0" allowfullscreen></iframe>
+            </div>
         </section>
 
         <section id="about">
