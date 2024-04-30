@@ -29,7 +29,7 @@
             padding: 20px;
             border-radius: 10px;
             z-index: 999; /* Ensure it's above other content */
-            opacity: 0.5; /* Make it slightly transparent */
+            opacity: 0.8; /* Make it more transparent */
         }
         /* Adjust for small screens */
         @media only screen and (max-width: 768px) {
@@ -157,4 +157,25 @@
             answerChoices.forEach(choice => {
                 // Get the input element
                 const input = choice.querySelector('input');
+                // Check if the choice is selected
+                if (input.checked) {
+                    // Check if the selected answer is correct
+                    if (input.dataset.correct === 'true') {
+                        // Add 'correct' class to correct answer
+                        choice.classList.add('correct');
+                    } else {
+                        // Add 'incorrect' class to incorrect answer
+                        choice.classList.add('incorrect');
+                        // Find the correct answer and highlight it
+                        const correctAnswer = choice.parentElement.querySelector('[data-correct="true"]');
+                        correctAnswer.parentElement.classList.add('correct');
+                    }
+                }
+            });
+            // Disable button after submission
+            document.querySelector('button').disabled = true;
+        }
+    </script>
+</body>
+</html>
 
