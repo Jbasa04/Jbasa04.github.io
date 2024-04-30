@@ -23,14 +23,25 @@
         #quiz-popup {
             display: none;
             position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            bottom: 20px;
+            right: 20px;
             background-color: #f0f0f0;
             padding: 20px;
             border-radius: 10px;
             z-index: 999; /* Ensure it's above other content */
             opacity: 0.9; /* Make it slightly transparent */
+        }
+        #quiz-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: slateblue; /* Change button color */
+            color: white; /* Text color */
+            padding: 10px 20px; /* Adjust padding */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1000; /* Ensure it's above other content */
         }
     </style>
 </head>
@@ -46,8 +57,7 @@
             <a href="index.html"><img src="home_icon2.png" alt="Home" class="home-icon"></a>
             <h1>Welcome to Exploring Intersexuality</h1>
             <!-- Small piece on intersex advocacy -->
-            
-                 <p>In a world where diversity should be celebrated, it's crucial to shine a light on the experiences of intersex individuals. Intersex people are born with variations in sex characteristics that don't fit typical definitions of male or female. Despite being relatively common, intersex traits are often misunderstood or stigmatized, leading to challenges in medical, social, and legal realms.</p>
+                                <p>In a world where diversity should be celebrated, it's crucial to shine a light on the experiences of intersex individuals. Intersex people are born with variations in sex characteristics that don't fit typical definitions of male or female. Despite being relatively common, intersex traits are often misunderstood or stigmatized, leading to challenges in medical, social, and legal realms.</p>
             <p>Advocacy for intersex rights is not just about recognition; it's about affirming the inherent dignity and rights of every individual. It involves challenging harmful norms, promoting awareness, and advocating for policies that protect intersex people from discrimination, unnecessary medical interventions, and other forms of harm.</p>
             <p>By amplifying intersex voices and advocating for their rights, we can foster a more inclusive and understanding society. Together, let's embrace diversity and stand in solidarity with intersex individuals as they navigate their identities and strive for equality.</p>
      
@@ -60,10 +70,8 @@
 
 
 
-
-
 	    <!-- Button to open quiz popup -->
-            <button onclick="toggleQuizPopup()">Take Quiz</button>
+            <button id="quiz-button" onclick="toggleQuizPopup()">Take Quiz</button>
         </div>
     </header>
 
@@ -160,7 +168,7 @@
         // Function to toggle quiz popup visibility
         function toggleQuizPopup() {
             var popup = document.getElementById("quiz-popup");
-            if (popup.style.display === "none") {
+            if (popup.style.display === "none" || popup.style.display === "") {
                 popup.style.display = "block";
             } else {
                 popup.style.display = "none";
